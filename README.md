@@ -1,6 +1,6 @@
 # JogoDaVelha
 
-Jogo da velha, Busca em Força Bruta 
+Implementada: Busca em Força Bruta 
 
 Terceiro projeto da professora Roberta - Disciplina:Estrutura de dados
 
