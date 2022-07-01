@@ -22,7 +22,10 @@ score = {
 def brute_force(tabuleiro, jogador, token):
     winner = test_winner(tabuleiro)
     if(winner):
-        return score[winner]
+        if token[0] == 'X':
+            return score[winner]
+        else:
+            return (score[winner]) * -1
     
     jogador = (jogador + 1) % 2
     
@@ -32,14 +35,13 @@ def brute_force(tabuleiro, jogador, token):
         tabuleiro[coordenadas[0]][coordenadas[1]] = token[jogador]
         valor = brute_force(tabuleiro, jogador, token)
         tabuleiro[coordenadas[0]][coordenadas[1]] = ""
-
         if(melhor_valor is None):
             melhor_valor = valor
-        elif(jogador == 0):
-            if(melhor_valor > valor):
+        elif jogador == 0:
+            if melhor_valor < valor:
                 melhor_valor = valor
-        elif(jogador == 1):
-            if(melhor_valor < valor):
+        elif jogador == 1:
+            if melhor_valor > valor:
                 melhor_valor = valor
     return melhor_valor
 
@@ -62,5 +64,6 @@ def moviment(tabuleiro, jogador, token):
         elif jogador == 1:
             if melhor_valor > valor:
                 melhor_valor = valor
-                melhor_jogada = coordenadas     
+                melhor_jogada = coordenadas
+        
     return melhor_jogada
