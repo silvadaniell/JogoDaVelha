@@ -8,4 +8,4 @@ Daniel José da Silva
 
 Renato dos Santos Alves
 
-Carlos Eduardo 
+Carlos Eduardo de Melo Gomes
